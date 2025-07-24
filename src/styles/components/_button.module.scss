@@ -1,0 +1,64 @@
+@use "sass:color";
+@use "../variables" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: $border-radius;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: $box-shadow;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // Variants
+  &.primary {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: $primary-hover;
+    }
+  }
+
+  &.secondary {
+    background-color: $secondary-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust($secondary-color, $lightness: -10%);
+    }
+  }
+
+  &.danger {
+    background-color: $danger-color;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: color.adjust($danger-color, $lightness: -10%);
+
+    }
+  }
+
+  // Sizes
+  &.sm {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+  }
+
+  &.md {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-base;
+  }
+
+  &.lg {
+    padding: $spacing-lg $spacing-xl;
+    font-size: $font-size-lg;
+  }
+}
