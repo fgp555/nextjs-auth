@@ -1,6 +1,13 @@
-import type { Metadata } from "next";
-import "./globals.scss";
+// src/app/layout.tsx
+
+import "@/styles/variables.scss";
+import "@/styles/globals.scss";
+import "@/styles/components/_btn.scss";
+import "@/styles/components/_form.scss";
+import "@/styles/components/_checkbox.scss";
 import { AuthProvider } from "@/features/auth/context/AuthContext";
+import CookieBanner from "@/components/CookieBanner/CookieBanner";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,8 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <AuthProvider>{children}</AuthProvider>
+      <body className="layout-container">
+        <AuthProvider>
+          {children}
+          <CookieBanner />
+        </AuthProvider>
       </body>
     </html>
   );

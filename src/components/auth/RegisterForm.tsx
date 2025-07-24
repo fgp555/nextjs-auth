@@ -3,9 +3,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/features/auth/hooks/useAuth";
-import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
-import styles from "@/styles/components/_auth.module.scss";
+import { Button } from "@/components/ui/Button/Button";
+import { Input } from "@/components/ui/Input/Input";
 
 export const RegisterForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -42,10 +41,10 @@ export const RegisterForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.authForm}>
+    <form onSubmit={handleSubmit} className="authForm">
       <h2>Register</h2>
 
-      {error && <div className={styles.error}>{error}</div>}
+      {error && <div className="error">{error}</div>}
 
       <Input type="text" name="name" label="Full Name" value={formData.name} onChange={handleChange} required />
 
@@ -66,7 +65,7 @@ export const RegisterForm: React.FC = () => {
 
       <p>
         Already have an account?{" "}
-        <a href="/login" className={styles.link}>
+        <a href="/login" className="link">
           Login here
         </a>
       </p>

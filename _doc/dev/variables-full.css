@@ -1,0 +1,200 @@
+:root {
+  /* === PALETA DE COLORES === */
+  /* Colores primarios */
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  --primary-900: #1e3a8a;
+
+  /* Colores de acento */
+  --accent-400: #8b5cf6;
+  --accent-500: #5021ff;
+  --accent-600: #4338ca;
+
+  /* Colores semánticos */
+  --success-400: #34d399;
+  --success-500: #10b981;
+  --success-600: #059669;
+
+  --warning-400: #fbbf24;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
+
+  --error-400: #f87171;
+  --error-500: #ef4444;
+  --error-600: #dc2626;
+
+  --danger-500: #d76457;
+  --danger-600: #c53030;
+
+  /* Escala de grises */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* === TIPOGRAFÍA === */
+  --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-secondary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+
+  /* Tamaños de fuente */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+
+  /* Pesos de fuente */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Altura de línea */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* === ESPACIADO === */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-5: 1.25rem; /* 20px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-10: 2.5rem; /* 40px */
+  --spacing-12: 3rem; /* 48px */
+  --spacing-16: 4rem; /* 64px */
+  --spacing-20: 5rem; /* 80px */
+
+  /* === BORDES Y RADIOS === */
+  --border-radius-none: 0;
+  --border-radius-sm: 0.125rem; /* 2px */
+  --border-radius-base: 0.375rem; /* 6px */
+  --border-radius-md: 0.5rem; /* 8px */
+  --border-radius-lg: 0.75rem; /* 12px */
+  --border-radius-xl: 1rem; /* 16px */
+  --border-radius-full: 50%;
+
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+
+  /* === SOMBRAS === */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* === TRANSICIONES === */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+
+  /* === Z-INDEX === */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* === TEMA CLARO (por defecto) === */
+  --color-text-primary: var(--gray-900);
+  --color-text-secondary: var(--gray-600);
+  --color-text-muted: var(--gray-500);
+  --color-text-inverse: var(--gray-50);
+
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: var(--gray-50);
+  --color-bg-tertiary: var(--gray-100);
+  --color-bg-surface: #ffffff;
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+
+  --color-border-primary: var(--gray-300);
+  --color-border-secondary: var(--gray-200);
+  --color-border-focus: var(--primary-500);
+
+  --color-interactive-primary: var(--primary-500);
+  --color-interactive-primary-hover: var(--primary-600);
+  --color-interactive-secondary: var(--gray-200);
+  --color-interactive-secondary-hover: var(--gray-300);
+}
+
+/* === TEMA OSCURO === */
+.dark-mode,
+[data-theme="dark"] {
+  --color-text-primary: var(--gray-50);
+  --color-text-secondary: #b0b3c1;
+  --color-text-muted: var(--gray-400);
+  --color-text-inverse: var(--gray-900);
+
+  --color-bg-primary: #1a1f26;
+  --color-bg-secondary: #1f242a;
+  --color-bg-tertiary: #222533;
+  --color-bg-surface: #1f242a;
+  --color-bg-overlay: rgba(0, 0, 0, 0.8);
+
+  --color-border-primary: #42434a;
+  --color-border-secondary: var(--gray-700);
+  --color-border-focus: var(--primary-400);
+
+  --color-interactive-primary: var(--primary-400);
+  --color-interactive-primary-hover: var(--primary-500);
+  --color-interactive-secondary: var(--gray-700);
+  --color-interactive-secondary-hover: var(--gray-600);
+
+  /* Ajustar sombras para tema oscuro */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* === UTILIDADES DE BREAKPOINTS === */
+:root {
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* === VARIABLES LEGACY (compatibilidad) === */
+:root {
+  /* Mapeo de variables antiguas a nuevas */
+  --font-family: var(--font-family-primary);
+  --accent-color: var(--accent-500);
+  --black-color: var(--gray-900);
+  --white-color: #ffffff;
+  --border-radius: var(--border-radius-base);
+
+  --text-color: var(--color-text-primary);
+  --base-color: var(--color-bg-primary);
+  --color-bg-page: var(--color-bg-primary);
+  --hover-color: var(--color-interactive-secondary-hover);
+  --line-color: var(--color-border-primary);
+  --secondary-text-color: var(--color-text-secondary);
+
+  --color-bg-surface-1: var(--color-bg-secondary);
+  --color-primary-red-700: var(--danger-500);
+}

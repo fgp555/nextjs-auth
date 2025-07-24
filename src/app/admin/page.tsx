@@ -5,8 +5,8 @@ import { useAuth } from "@/features/auth/hooks/useAuth";
 import { useEffect, useState } from "react";
 import axiosInstance from "@/lib/axios/axiosInstance";
 
-interface UserData {
-  id: number;
+interface IUserData {
+  _id: number;
   name: string;
   email: string;
   role: string;
@@ -14,14 +14,14 @@ interface UserData {
 
 export default function AdminPage() {
   const { user } = useAuth();
-  const [users, setUsers] = useState<UserData[]>([]);
+  const [users, setUsers] = useState<IUserData[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axiosInstance.get("/api/users");
-        setUsers(response.data.users);
+        const response = await axiosInstance.get("/api/users/findAll");
+        setUsers(response.data.results); // ⬅️ Ajuste aquí
       } catch (error) {
         console.error("Failed to fetch users:", error);
       } finally {
@@ -32,10 +32,10 @@ export default function AdminPage() {
     fetchUsers();
   }, []);
 
-  const deleteUser = async (userId: number) => {
+  const deleteUser = async (_id: number) => {
     try {
-      await axiosInstance.delete(`/api/users/${userId}`);
-      setUsers(users.filter((u) => u.id !== userId));
+      await axiosInstance.delete(`/api/users/remove/${_id}`);
+      setUsers((prev) => prev.filter((u) => u._id !== _id));
     } catch (error) {
       console.error("Failed to delete user:", error);
     }
@@ -63,13 +63,13 @@ export default function AdminPage() {
             </thead>
             <tbody>
               {users.map((u) => (
-                <tr key={u.id}>
-                  <td>{u.id}</td>
+                <tr key={u._id}>
+                  <td>{u._id}</td>
                   <td>{u.name}</td>
                   <td>{u.email}</td>
                   <td>{u.role}</td>
                   <td>
-                    <button onClick={() => deleteUser(u.id)}>Delete</button>
+                    <button onClick={() => deleteUser(u._id)}>Delete</button>
                   </td>
                 </tr>
               ))}

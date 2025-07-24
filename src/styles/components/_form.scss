@@ -1,0 +1,118 @@
+.form {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  // background: peru;
+
+  > aside {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    > label {
+      position: absolute;
+      background-color: var(--color-base);
+      padding: 0 0.8rem;
+      z-index: 1;
+      left: 10px;
+      top: -10px;
+      font-size: var(--text-xs);
+      border-radius: var(--border-radius);
+    }
+  }
+
+  /* Campos de entrada */
+  select,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="url"],
+  input[type="number"],
+  input[type="datetime-local"],
+  input[type="date"] {
+    padding: 10px;
+    font-size: var(--text-base);
+    border: 1px solid var(--color-line);
+    border-radius: var(--border-radius);
+    background-color: var(--color-base);
+    color: var(--color-text);
+    font-family: var(--font-family-primary);
+
+    &:focus {
+      border-color: var(--color-accent);
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: var(--color-line);
+      color: var(--color-muted);
+    }
+  }
+
+  textarea {
+    padding: 10px;
+    font-size: var(--text-base);
+    border: 1px solid var(--color-line);
+    border-radius: var(--border-radius);
+    color: var(--color-text);
+    background-color: var(--color-base);
+    min-height: 100px;
+    resize: vertical;
+    font-family: var(--font-family-primary);
+
+    &:focus {
+      border-color: var(--color-accent);
+      outline: none;
+    }
+  }
+
+  .error-message {
+    color: var(--color-error);
+    font-size: var(--text-xs);
+    margin-top: 5px;
+  }
+
+  .checkbox-container {
+    margin: 1em auto;
+  }
+}
+
+.dark-mode .form {
+  select,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="url"],
+  input[type="number"],
+  input[type="date"],
+  textarea {
+    background-color: var(--color-base);
+    color: var(--color-text);
+    border-color: var(--color-line);
+  }
+
+  .error-message {
+    color: var(--color-error);
+    font-size: var(--text-xs);
+  }
+
+  input:disabled {
+    background-color: var(--color-line);
+    color: var(--color-muted);
+  }
+
+  input[type="date"] {
+    color-scheme: dark;
+  }
+}
+
+textarea {
+  font: inherit;
+}

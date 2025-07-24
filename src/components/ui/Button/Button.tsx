@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/components/_button.module.scss";
+import "./Button.scss"; // asegúrate de que se importe como archivo global
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "danger";
@@ -17,11 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <button
-      className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`}
-      disabled={disabled || loading}
-      {...props}
-    >
+    <button className={`button ${variant} ${size} ${className}`} disabled={disabled || loading} {...props}>
       {loading ? "Loading..." : children}
     </button>
   );

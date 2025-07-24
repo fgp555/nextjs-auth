@@ -3,13 +3,12 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/features/auth/hooks/useAuth";
-import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
-import styles from "@/styles/components/_auth.module.scss";
+import { Button } from "@/components/ui/Button/Button";
+import { Input } from "@/components/ui/Input/Input";
 
 export const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("admin@gmail.com");
-  const [password, setPassword] = useState("123456");
+  const [password, setPassword] = useState("admin@gmail.com");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -32,25 +31,38 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.authForm}>
-      <h2>Login</h2>
+    <form onSubmit={handleSubmit} className="form">
+      <aside>
+        <h2>Login</h2>
 
-      {error && <div className={styles.error}>{error}</div>}
+        {error && <div className="error">{error}</div>}
+        <div>
+          <Input type="email" label="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        </div>
 
-      <Input type="email" label="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <div>
+          <Input
+            type="password"
+            label="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
 
-      <Input type="password" label="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <div>
+          <Button type="submit" loading={loading} className="btn btn-primary">
+            Login
+          </Button>
+        </div>
 
-      <Button type="submit" loading={loading}>
-        Login
-      </Button>
-
-      <p>
-        Don't have an account?{" "}
-        <a href="/register" className={styles.link}>
-          Register here
-        </a>
-      </p>
+        <p>
+          Don't have an account?{" "}
+          <a href="/register" className="link">
+            Register here
+          </a>
+        </p>
+      </aside>
     </form>
   );
 };

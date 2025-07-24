@@ -1,29 +1,104 @@
-@use "variables" as *;
+// @use "variables" as *;
+// @use "components/btn";
+// @use "components/form";
+// import  "components/form";
+// @import "components/form";
 
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-body {
-  font-family: $font-family;
-  line-height: 1.6;
-  color: #374151;
-  background-color: #f9fafb;
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  list-style-type: none;
 }
 
 a {
-  color: $primary-color;
   text-decoration: none;
+  color: inherit;
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 $spacing-md;
+  padding: 0 20px;
+}
+
+.title {
+  color: var(--color-accent);
+  font-size: 2em;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.subtitle {
+  color: var(--color-accent);
+  font-size: 1.5em;
+  text-align: center;
+}
+
+@media (max-width: 40rem) {
+  .dn-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 40rem) {
+  .dn-desktop {
+    display: none !important;
+  }
+}
+
+/* Estilos para navegadores basados en WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 10px;
+  min-height: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) transparent;
 }

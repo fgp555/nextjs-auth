@@ -1,9 +1,8 @@
-import axios, { AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
-
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
+import axios, { AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import { baseUrl } from "../constants";
 
 export const axiosInstance = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: baseUrl,
   headers: {
     "Content-Type": "application/json",
   },
@@ -38,7 +37,7 @@ axiosInstance.interceptors.response.use(
           throw new Error("No refresh token available");
         }
 
-        const response = await axios.post(`${API_BASE_URL}/api/auth/refresh-token`, {
+        const response = await axios.post(`${baseUrl}/api/auth/refresh-token`, {
           refreshToken,
         });
 

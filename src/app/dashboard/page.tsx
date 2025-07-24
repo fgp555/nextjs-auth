@@ -2,7 +2,7 @@
 
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { useAuth } from "@/features/auth/hooks/useAuth";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button/Button";
 
 export default function DashboardPage() {
   const { user, logout } = useAuth();

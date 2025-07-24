@@ -1,0 +1,54 @@
+:root {
+  /* Colores de estado */
+  --pending-color: #cd6200;
+  --cancel-color: #bb0000;
+  --read-color: #008000;
+  --sent-color: #007bff;
+}
+
+.dark-mode {
+  /* Ajustar colores de estado en dark mode si es necesario */
+  --pending-color: #e07b26;
+  --cancel-color: #d9534f;
+  --read-color: #28a745;
+  --sent-color: #339af0;
+}
+
+.status_container {
+  > span {
+    padding: 0.2rem 1rem;
+    max-width: 7rem;
+    display: block;
+    text-align: center;
+    color: var(--color-base); /* Antes: var(--white-color) */
+    border-radius: var(--border-radius);
+    font-size: var(--text-base);
+    font-family: var(--font-family-primary);
+  }
+
+  /* Estilos para cada estado */
+  .Pendiente {
+    background-color: var(--pending-color);
+  }
+
+  .Cancelado {
+    background-color: var(--cancel-color);
+  }
+
+  .Leido {
+    background-color: var(--read-color);
+  }
+
+  .Enviado,
+  .Entregado {
+    background-color: var(--sent-color);
+  }
+}
+
+.error-message {
+  color: red;
+}
+
+.success-message {
+  color: green;
+}

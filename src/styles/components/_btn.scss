@@ -1,0 +1,73 @@
+.btn {
+  font-size: var(--text-base);
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  border: 1px solid transparent;
+  display: inline-block;
+  font-family: var(--font-family-primary);
+  color: var(--color-text);
+  background-color: var(--color-line);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-base);
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  background-color: var(--color-line);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-hover);
+}
+
+.btn-disabled {
+  background-color: var(--color-line);
+  color: var(--color-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-disabled:hover {
+  background-color: var(--color-line);
+}
+
+.btn-small {
+  font-size: var(--text-xs);
+  padding: 0.3em 0.7em;
+}
+
+.btn-medium {
+  font-size: var(--text-base);
+  padding: 0.6em 1.2em;
+}
+
+.btn-large {
+  font-size: var(--text-2xl);
+  padding: 0.8em 1.5em;
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: var(--color-base);
+}
+
+i[class^="fa-"] {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.icon > i[class^="fa-"] {
+  margin-right: 0.5em;
+}

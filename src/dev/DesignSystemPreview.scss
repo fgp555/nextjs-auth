@@ -1,0 +1,114 @@
+// @use "../variables" as *;
+
+.design-system {
+  padding: 2rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-primary);
+  transition: background 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.colors {
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+
+    .swatch {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      text-transform: capitalize;
+      border-radius: 6px;
+      padding: 0.5rem;
+    }
+
+    .primary   { background-color: var(--color-primary); }
+    .secondary { background-color: var(--color-secondary); }
+    .accent    { background-color: var(--color-accent); }
+    .success   { background-color: var(--color-success); }
+    .warning   { background-color: var(--color-warning); }
+    .error,
+    .danger    { background-color: var(--color-error); }
+    .gray      { background-color: gray; }
+    .black     { background-color: black; }
+    .white     { background-color: white; color: black; }
+    .text      { background-color: var(--color-text); color: black; }
+    .bg        { background-color: var(--color-bg); color: white; }
+  }
+}
+
+.typography {
+  margin-top: 2rem;
+
+  .text-sample {
+    margin-bottom: 1rem;
+  }
+
+  .sample {
+    font-size: 1.2rem;
+  }
+
+  .primary-font   { font-family: var(--font-family-primary); }
+  .secondary-font { font-family: var(--font-family-secondary); }
+  .mono-font      { font-family: var(--font-family-mono); }
+}
+
+.form-controls {
+  margin-top: 2rem;
+}
+
+.checkbox {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  justify-content: center;
+  font-family: var(--font-family-primary);
+}
+
+.checkbox input {
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-bg);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox input:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.checkbox input:checked::after {
+  content: "✔";
+  font-size: 0.9em;
+  color: var(--color-bg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox:hover input {
+  border-color: var(--color-muted);
+}
